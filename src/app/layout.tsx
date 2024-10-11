@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navigation from "./components/Navigation";
+import MegaMenu from "./components/NavigationMegaMenu";
 
 import "./globals.css";
 
@@ -17,7 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
+        {/* <Navigation /> */}
+        <MegaMenu />
         <main>{children}</main>
       </body>
     </html>

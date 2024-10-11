@@ -6,8 +6,8 @@ export default function Blank() {
         <main
           id="main-content"
         >
-          <div className="mx-auto px-4 py-8 text-slate-900">
-           <p>Blank</p>
+          <div className="mx-auto px-4 py-8 text-white">
+           <p>Test</p>
           </div>
         </main>
         </div>

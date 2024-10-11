@@ -27,7 +27,10 @@ export default function Navigation() {
  
 
   return (
-    <nav className="md:h-auto fixed top-0 left-0 right-0 z-50 @container sm:bg-white backdrop-filter backdrop-blur-lg md:bg-opacity-30 w-full">
+    <nav className="md:h-auto fixed top-0 left-0 right-0 z-50 @container sm:bg-black  ${getNavTextColor()}`} backdrop-filter backdrop-blur-lg md:bg-opacity-90 w-full">
+        <div className=" w-full justify-center items-center bg-blue-600 py-2">
+        <p className=' text-white text-center font-thin text-sm tracking'> Free Shipping on orders over $50</p>
+        </div>
       <div className="@sm:max-w-[980px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}

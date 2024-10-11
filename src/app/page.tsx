@@ -33,7 +33,7 @@ const LongBackgroundImage = ({ src, alt }) => {
           src={src}
           alt={alt}
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
           objectPosition="center"
           quality={100}
           priority
@@ -48,7 +48,7 @@ export default function Home() {
     <div className='@container'>
     <div className="relative">
       <LongBackgroundImage 
-        src="/images/3cdac99b-cb71-41b9-a80f-06dc58318154_03.png"
+        src="/images/hero03.png"
         alt="Long background image"
       />
      <HomeHero />
