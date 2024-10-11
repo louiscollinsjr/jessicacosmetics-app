@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X, ShoppingCart, Search, User } from 'lucide-react'
+
 
 // Define the color scheme type
 type ColorScheme = {
@@ -106,6 +107,9 @@ export default function MegaMenu({ colorScheme = {
 } }: MegaMenuProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [showAnnouncement, setShowAnnouncement] = useState(true)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  
 
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
@@ -117,6 +121,15 @@ export default function MegaMenu({ colorScheme = {
     setActiveMenu(title)
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY
+      setScrollPosition(currentScrollPosition)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   // Dynamic styles based on the color scheme
   const styles = {
     header: `${colorScheme.primary} ${colorScheme.text}`,
@@ -124,9 +137,32 @@ export default function MegaMenu({ colorScheme = {
     subMenu: `${colorScheme.primary} ${colorScheme.accent}`,
     mobileMenu: `${colorScheme.primary} ${colorScheme.text}`,
   }
+  const announcementHeight = 40 // Adjust based on your actual announcement height
+  //const showAnnouncement = scrollPosition < announcementHeight
 
   return (
-    <header className={`${styles.header} fixed top-0 left-0 right-0 z-50 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest`}>
+    <>
+    {showAnnouncement && (
+      <div 
+        className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-50"
+        style={{ transform: `translateY(-${scrollPosition}px)` }}
+      >
+        <div className="container mx-auto px-4 flex justify-center items-center">
+          <span>Elevate your salon services with JESSICA's trusted products. Contact us today to learn how to bring JESSICA to your salon!</span>
+          <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
+            <X className="h-4 w-4 text-black" />
+          </button>
+        </div>
+      </div>
+    )}
+
+    <header 
+      className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest`}
+      style={{ 
+        top: showAnnouncement ? `${Math.max(announcementHeight - scrollPosition, 0)}px` : '0',
+        transition: 'top 0.0s ease-out'
+      }}
+    >
       <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" className="text-xs">
           JessicaCosmetics.ro
@@ -217,7 +253,7 @@ export default function MegaMenu({ colorScheme = {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className={`${styles.mobileMenu} md:hidden`}>
+        <div className={`${styles.mobileMenu} md:hidden ${showAnnouncement ? 'mt-10' : ''}`}>
           {menuData.map((section) => (
             <div key={section.title} className="border-b border-gray-700">
               <button
@@ -253,6 +289,9 @@ export default function MegaMenu({ colorScheme = {
           ))}
         </div>
       )}
+      
     </header>
+    </>
   )
 }
+
