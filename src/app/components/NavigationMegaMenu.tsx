@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X, ShoppingCart, Search, User } from 'lucide-react'
+import { useTranslation } from 'next-i18next'
 
 
 // Define the color scheme type
@@ -109,7 +110,9 @@ export default function MegaMenu({ colorScheme = {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [showAnnouncement, setShowAnnouncement] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(0)
+  const { t } = useTranslation()
   
+
 
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
@@ -148,7 +151,7 @@ export default function MegaMenu({ colorScheme = {
         style={{ transform: `translateY(-${scrollPosition}px)` }}
       >
         <div className="container mx-auto px-4 flex justify-center items-center">
-          <span>Elevate your salon services with JESSICA's trusted products. Contact us today to learn how to bring JESSICA to your salon!</span>
+          <span>{t('announcement')}</span>
           <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
             <X className="h-4 w-4 text-black" />
           </button>
@@ -294,4 +297,3 @@ export default function MegaMenu({ colorScheme = {
     </>
   )
 }
-
