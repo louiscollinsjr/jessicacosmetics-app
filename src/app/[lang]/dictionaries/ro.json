@@ -1,0 +1,14 @@
+{
+  "page": {
+    "title": "Bună, Next.js i18n",
+"desc": "Aceasta este o demonstrație a Next.js i18n"
+ },
+ "HomeHero": {
+   "title": "Bună, Next.js i18n",
+"desc": "Aceasta este o demonstrație a Next.js i18n",
+"Shop Pastels Colours": "Magazinul de pasteli de culoare"
+ },
+ "NavigationMegaMenu": {
+  "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "page": {
+    "title": "Jessica",
+    "desc": "How to implement i18n with Next.js (based on App Router)"
+  },
+  "HomeHero": {
+    "title": "Hello, Next.js i18n",
+    "desc": "This is a demo of Next.js i18n"
+  },
+  "NavigationMegaMenu": {
+  "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!"
+  }
+}

@@ -3,7 +3,14 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X, ShoppingCart, Search, User } from 'lucide-react'
-import { useTranslation } from 'next-i18next'
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 
 
 // Define the color scheme type
@@ -110,7 +117,7 @@ export default function MegaMenu({ colorScheme = {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [showAnnouncement, setShowAnnouncement] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const { t } = useTranslation()
+  
   
 
 
@@ -142,7 +149,7 @@ export default function MegaMenu({ colorScheme = {
   }
   const announcementHeight = 40 // Adjust based on your actual announcement height
   //const showAnnouncement = scrollPosition < announcementHeight
-
+ 
   return (
     <>
     {showAnnouncement && (
@@ -150,8 +157,8 @@ export default function MegaMenu({ colorScheme = {
         className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-50"
         style={{ transform: `translateY(-${scrollPosition}px)` }}
       >
-        <div className="container mx-auto px-4 flex justify-center items-center">
-          <span>{t('announcement')}</span>
+        <div className="container mx-auto px-4 flex justify-center items-center text-xs">
+          <span>Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!</span>
           <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
             <X className="h-4 w-4 text-black" />
           </button>
@@ -160,7 +167,7 @@ export default function MegaMenu({ colorScheme = {
     )}
 
     <header 
-      className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest`}
+      className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest font-roboto`}
       style={{ 
         top: showAnnouncement ? `${Math.max(announcementHeight - scrollPosition, 0)}px` : '0',
         transition: 'top 0.0s ease-out'
@@ -172,9 +179,9 @@ export default function MegaMenu({ colorScheme = {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center justify-center space-x-8 flex-grow fixed top-0 left-0 right-0 z-60">
+        <div className="hidden md:flex items-center justify-center space-x-8 flex-grow fixed top-0 left-0 right-0 z-60 font-roboto">
           {menuData.map((section) => (
-            <div key={section.title} className="relative group">
+            <div key={section.title} className="relative group font-light">
               <button
                 className={`${styles.menuItem} px-3 py-2 rounded-md transition duration-600 flex items-center`}
                 onMouseEnter={() => toggleSubMenu(section.title)}
@@ -212,7 +219,7 @@ export default function MegaMenu({ colorScheme = {
 
       {/* Submenu */}
       <div
-        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`w-full overflow-hidden transition-all duration-300 ease-in-out font-roboto text-xs ${
           activeMenu ? 'max-h-96 opacity-100 h-44' : 'max-h-0 opacity-0'
         }`}
         onMouseEnter={() => activeMenu && toggleSubMenu(activeMenu)}
@@ -221,7 +228,7 @@ export default function MegaMenu({ colorScheme = {
         <div className={`${styles.subMenu} w-full`}>
           {menuData.map((section) => (
             activeMenu === section.title && (
-              <div key={section.title} className="container mx-auto px-4 py-6 flex">
+              <div key={section.title} className="container mx-auto px-4 py-6 flex font-roboto">
                 <div className="w-1/3 pr-8">
                   <p className="text-xs text-gray-500">{section.eyebrow}</p>
                   <h2 className="text-lg font-semibold mb-">{section.title}</h2>
