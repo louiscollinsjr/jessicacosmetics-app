@@ -104,17 +104,17 @@ export default function ComingSoon({ dictionary }: ComingSoonProps) {
           </div>
 
           {/* Right Column */}
-          <div className="md:w-1/2 p-8 md:px-12 flex flex-col items-center justify-center">
+          <div className="md:w-1/2 md:p-8 md:px-12 flex flex-col items-center justify-center">
             <Image
               src="/images/JessicaLogoBlack.svg"
               alt="Jessica Cosmetics International"
               width={256}
               height={256}
-              className="h-96 w-96"
+              className="h-96 w-96 p-0 m-0"
               priority
               
             />
-            <Button variant="ghost" className="mt-2">
+            <Button variant="ghost" className="md:mt-2">
               ROMANIA
             </Button>
           </div>
