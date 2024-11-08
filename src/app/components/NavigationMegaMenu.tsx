@@ -157,7 +157,7 @@ export default function MegaMenu({ colorScheme = {
     <>
     {showAnnouncement && (
       <div 
-        className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-50"
+        className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-30"
         style={{ transform: `translateY(-${scrollPosition}px)` }}
       >
         <div className="container mx-auto px-4 flex justify-center items-center text-xs">

@@ -30,7 +30,7 @@ export default function ComingSoon({ dictionary }: ComingSoonProps) {
   
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 w-full">
+    <div className="min-h-screen flex items-center justify-center p-4 w-full pt-32 md:pt-4">
       <div className=" bg-white overflow-hidden w-full">
         <div className="flex flex-col md:flex-row">
           {/* Left Column */}
