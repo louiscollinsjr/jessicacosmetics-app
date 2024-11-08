@@ -4,6 +4,13 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X, ShoppingCart, Search, User } from 'lucide-react'
 import { Roboto } from 'next/font/google'
+import { Dictionary } from '@/types/dictionary';
+
+// Update props type
+type MegaMenuProps = {
+  colorScheme?: ColorScheme;
+  dictionary: Dictionary;
+}
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -22,10 +29,6 @@ type ColorScheme = {
   textHover: string
 }
 
-// Define the props for the MegaMenu component
-type MegaMenuProps = {
-  colorScheme?: ColorScheme
-}
 
 // Updated menu data structure with descriptions
 const menuData = [
@@ -112,7 +115,7 @@ export default function MegaMenu({ colorScheme = {
   accent: 'border-gray-700',
   text: 'text-gray-300',
   textHover: 'text-white',
-} }: MegaMenuProps) {
+}, dictionary }: MegaMenuProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [showAnnouncement, setShowAnnouncement] = useState(true)
@@ -158,7 +161,7 @@ export default function MegaMenu({ colorScheme = {
         style={{ transform: `translateY(-${scrollPosition}px)` }}
       >
         <div className="container mx-auto px-4 flex justify-center items-center text-xs">
-          <span>Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!</span>
+          <span>{dictionary.NavigationMegaMenu.announcement}</span>
           <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
             <X className="h-4 w-4 text-black" />
           </button>
@@ -174,8 +177,8 @@ export default function MegaMenu({ colorScheme = {
       }}
     >
       <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
-        <Link href="/" className="text-xs">
-          JessicaCosmetics.ro
+        <Link href="/" className="text-xs text-white">
+        JESSICA® Cosmetics - România
         </Link>
 
         {/* Desktop Menu */}
@@ -265,15 +268,15 @@ export default function MegaMenu({ colorScheme = {
       {mobileMenuOpen && (
         <div className={`${styles.mobileMenu} md:hidden ${showAnnouncement ? 'mt-10' : ''}`}>
           {menuData.map((section) => (
-            <div key={section.title} className="border-b border-gray-700">
+            <div key={section.title} className="border-b border-black">
               <button
-                className="w-full px-4 py-2 flex justify-between items-center"
-                onClick={() => toggleSubMenu(activeMenu === section.title ? null : section.title)}
+                className="w-full px-4 py-2 flex justify-between items-center text-xl font-normal"
+                // onClick={() => toggleSubMenu(activeMenu === section.title ? null : section.title)}
               >
                 {section.title}
-                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeMenu === section.title ? 'rotate-180' : ''}`} />
+                {/* <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeMenu === section.title ? 'rotate-180' : ''}`} /> */}
               </button>
-              <div
+              {/* <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   activeMenu === section.title ? 'max-h-46 o4acity-100' : 'max-h-4 op4city-0'
                 }`}
@@ -294,7 +297,7 @@ export default function MegaMenu({ colorScheme = {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

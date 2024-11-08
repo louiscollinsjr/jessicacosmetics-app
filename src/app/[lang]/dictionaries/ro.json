@@ -1,14 +1,29 @@
 {
   "page": {
-    "title": "Bună, Next.js i18n",
-"desc": "Aceasta este o demonstrație a Next.js i18n"
+    "title": "JESSICA® Cosmetics - România",
+    "desc": "Jessica Cosmetics: Tratamente și culori naturale pentru îngrijirea unghiilor"
  },
  "HomeHero": {
-   "title": "Bună, Next.js i18n",
-"desc": "Aceasta este o demonstrație a Next.js i18n",
-"Shop Pastels Colours": "Magazinul de pasteli de culoare"
+    "title": "JESSICA® Cosmetics - România",
+    "desc": "Jessica Cosmetics: Tratamente și culori naturale pentru îngrijirea unghiilor",
+    "Shop Pastels Colours": "Magazinul de pasteli de culoare",
+    "Our new":"Noua noastră",
+    "website is on":"pagină web este",
+    "its way.":"pe drum."
  },
  "NavigationMegaMenu": {
   "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!"
-  }
+  },
+  "ComingSoon": {
+    "title": "Coming Soon",
+    "desc": "Coming Soon",
+    "headingLine1":"Noua noastră",
+    "headingLine2":"pagină web este",
+    "headingLine3":"pe drum.",
+    "subheadingLine1":"Înscrie-te pentru a fi primul care află",
+    "subheadingLine2":"când lansăm.",
+    "inputEmailPlaceholder":"Introdu aici adresa ta de email",
+    "inputSubmitButtonText":"Trimite",
+    "inputSubscribeToNewsLetter":"Da, abonează-mă la newsletter-ul vostru."
+ }
 }

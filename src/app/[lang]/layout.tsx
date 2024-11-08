@@ -3,35 +3,23 @@ import '../../app/globals.css';
 import React from 'react';
 import MegaMenu from '../components/NavigationMegaMenu';
 import type { Metadata } from "next";
+import { getDictionary } from '@/types/dictionary';
 
-export const metadata: Metadata = {
-  title: "JESSICA® Comentics - România",
-  description: "JESSICA® Comentics - România",
-};
+type Params = Promise<{ lang: string }>;
 
-interface LangParams {
-  lang: string;
-}
-
-export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "ro" }];
-}
-
-export default async function RootLayout({
-  children,
-  params,
-}: {
+interface LayoutProps {
   children: React.ReactNode;
-  params: LangParams;
-}) {
-  
-  const { lang } = await params; // Await params here
- // const lang = await params.lang;
+  params: Params;
+}
+
+export default async function RootLayout({ children, params }: LayoutProps) {
+  const { lang } = await params;  // Await `params` before accessing `lang`
+  const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang}>
       <body>
-        <MegaMenu />
+        <MegaMenu dictionary={dictionary} />
         <main>{children}</main>
       </body>
     </html>

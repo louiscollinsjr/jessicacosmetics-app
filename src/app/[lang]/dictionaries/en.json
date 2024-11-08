@@ -1,13 +1,25 @@
 {
   "page": {
-    "title": "Jessica",
-    "desc": "How to implement i18n with Next.js (based on App Router)"
+    "title": "JESSICA® Cosmetics - România",
+    "desc": "Jessica Cosmetics: Natural Nail Care Treatments and Colours"
   },
   "HomeHero": {
-    "title": "Hello, Next.js i18n",
-    "desc": "This is a demo of Next.js i18n"
+    "title": "JESSICA® Cosmetics - România",
+    "desc": "Jessica Cosmetics: Natural Nail Care Treatments and Colours"
   },
   "NavigationMegaMenu": {
-  "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!"
-  }
+  "announcement":"Elevate your salon services with trusted JESSICA products. Contact us today to learn how you can bring JESSICA to your salon!"
+  },
+  "ComingSoon": {
+    "title": "Coming Soon",
+    "desc": "Coming Soon",
+    "headingLine1":"Our new",
+    "headingLine2":"website is on",
+    "headingLine3":"its way.",
+    "subheadingLine1":"Sign up to be the first to know",
+    "subheadingLine2":" when we launch.",
+    "inputEmailPlaceholder":"Enter your email address here",
+    "inputSubmitButtonText":"Submit",
+    "inputSubscribeToNewsLetter":"Yes, subscribe me to your newsletter"
+ }
 }

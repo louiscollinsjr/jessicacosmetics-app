@@ -1,8 +1,12 @@
 'use client'
-import { Playfair_Display } from 'next/font/google';
-import Link from 'next/link';
-import ComingSoon from './ComingSoon';
 
+import { Playfair_Display } from 'next/font/google';
+import ComingSoon from './ComingSoon';
+import { Dictionary } from '@/types/dictionary';
+
+interface HomeHeroProps {
+  dictionary: Dictionary;
+}
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -10,10 +14,11 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
-export default function HomeHero() {
+
+export default function HomeHero({ dictionary }: HomeHeroProps) {
   return (
     <section className="@container container mx-auto lg:max-w-screen-lg relative h-screen">
-      <ComingSoon />
+      <ComingSoon dictionary={dictionary} />
       {/* <div className="absolute bottom-0 right-0 p-8 z-10">
         <h1
           className={`text-8xl font-normal mb-4 text-black ${playfairDisplay.className}`}

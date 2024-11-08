@@ -1,31 +1,28 @@
-import { getDictionary } from './dictionaries';
 import HomeHero from '../components/HomeHero';
 import LongBackgroundImage from '../components/LongImage';
 
-type Props = {
-  params: {
-    lang: string;
-  };
-};
+import { getDictionary } from '@/types/dictionary';
 
-export async function generateMetadata(props: Props) {
-  const { params } = props;
-  const t = await getDictionary(params.lang);
+type Params = Promise<{ lang: string }>;
 
+export async function generateMetadata({ params }: { params: Params }) {
+  const { lang } = await params;  // Await `params` before accessing `lang`
+  const dictionary = await getDictionary(lang);
+  
   return {
-    title: t.page.title,
-    description: t.page.desc,
+    title: dictionary.page.title,
+    description: dictionary.page.desc,
   };
 }
 
-export default async function Home(props: Props) {
-  const { params } = await props;
-  const t = await getDictionary(params.lang);
+export default async function Page({ params }: { params: Params }) {
+  const { lang } = await params;  // Await `params` before accessing `lang`
+  const dictionary = await getDictionary(lang);
 
   return (
     <div className="@container">
       <div className="relative">
-        <HomeHero />
+        <HomeHero dictionary={dictionary} />
       </div>
     </div>
   );
