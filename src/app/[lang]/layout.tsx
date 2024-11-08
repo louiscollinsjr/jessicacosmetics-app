@@ -2,7 +2,6 @@
 import '../../app/globals.css';
 import React from 'react';
 import MegaMenu from '../components/NavigationMegaMenu';
-import type { Metadata } from "next";
 import { getDictionary } from '@/types/dictionary';
 
 type Params = Promise<{ lang: string }>;

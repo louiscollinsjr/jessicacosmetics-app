@@ -1,6 +1,4 @@
 import HomeHero from '../components/HomeHero';
-import LongBackgroundImage from '../components/LongImage';
-
 import { getDictionary } from '@/types/dictionary';
 
 type Params = Promise<{ lang: string }>;
@@ -20,8 +18,8 @@ export default async function Page({ params }: { params: Params }) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="@container">
-      <div className="relative">
+    <div className="@container min-h-screen">
+      <div className="relative min-h-[100dvh] flex flex-col">
         <HomeHero dictionary={dictionary} />
       </div>
     </div>

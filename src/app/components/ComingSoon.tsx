@@ -1,6 +1,7 @@
+'use  client'
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
 import { SiFacebook, SiX, SiInstagram } from '@icons-pack/react-simple-icons';
 import { Wix_Madefor_Display } from 'next/font/google';
 import Image from 'next/image';
@@ -9,8 +10,6 @@ import { Dictionary } from '@/types/dictionary';
 interface ComingSoonProps {
   dictionary: Dictionary;
 }
-
-
 
 type Props = {
     params: {
