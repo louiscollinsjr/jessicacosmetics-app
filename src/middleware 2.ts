@@ -3,7 +3,7 @@ import { match } from "@formatjs/intl-localematcher";
 import { NextRequest, NextResponse } from "next/server";
 
 const locales = ["en", "ro"];
-const defaultLocale = "ro";
+const defaultLocale = "en";
 const cookieName = "i18nlang";
 
 // Get the preferred locale, similar to the above or using a library
@@ -49,7 +49,6 @@ export const config = {
     //"/((?!_next/image).*)",
     // Optional: only run on root (/) URL
     // '/'
-    //"/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)",
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.svg$|.*\\.ico$).*)',
+    "/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)",
   ],
 };
