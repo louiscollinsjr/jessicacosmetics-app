@@ -29,7 +29,7 @@ export default function HomeHero({ dictionary }: HomeHeroProps) {
   }
 
   return (
-    <section className="@container container mx-auto lg:max-w-screen-lg relative h-screen">
+    <section className="@container container mx-auto lg:max-w-screen-lg relative min-h-screen">
       <ComingSoon dictionary={dictionary} />
     </section>
   );

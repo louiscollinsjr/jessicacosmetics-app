@@ -17,9 +17,9 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={lang}>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <MegaMenu dictionary={dictionary} />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
       </body>
     </html>
   );
