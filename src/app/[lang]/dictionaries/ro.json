@@ -32,6 +32,8 @@
     "subheadingLine2":"când lansăm.",
     "inputEmailPlaceholder":"Introdu aici adresa ta de email",
     "inputSubmitButtonText":"Trimite",
-    "inputSubscribeToNewsLetter":"Da, abonează-mă la newsletter-ul vostru."
+    "inputSubscribeToNewsLetter":"Da, abonează-mă la newsletter-ul vostru.",
+    "successMessage":"Vă mulțumim pentru subscrierea la newsletter-ul nostru!",
+    "successFailureMessage":"A apărut o eroare la trimiterea informațiilor."
  }
 }

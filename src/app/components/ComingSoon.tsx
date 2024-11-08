@@ -41,7 +41,7 @@ export default function ComingSoon({ dictionary }: ComingSoonProps) {
       }
 
       // Show success message
-      setSuccessMessage('Contact information submitted successfully!'); // Set success message
+      setSuccessMessage(dictionary.ComingSoon.successMessage); // Set success message
       setEmail(''); // Clear the form
       setIsSubscribed(false);
 
@@ -49,7 +49,7 @@ export default function ComingSoon({ dictionary }: ComingSoonProps) {
       setTimeout(() => setSuccessMessage(''), 5000); // Clear after 5 seconds
     } catch (error) {
       console.error(error);
-      setSuccessMessage('An error occurred while submitting your information.'); // Show error message
+      setSuccessMessage(dictionary.ComingSoon.successFailureMessage); // Show error message
     }
   };
 
@@ -108,7 +108,7 @@ export default function ComingSoon({ dictionary }: ComingSoonProps) {
 
             {/* Success/Error Message */}
             {successMessage && (
-              <p className="pt-4 text-center md:text-left text-green-600">
+              <p className="pt-4 text-center md:text-left text-green-600 text-xs">
                 {successMessage}
               </p>
             )}

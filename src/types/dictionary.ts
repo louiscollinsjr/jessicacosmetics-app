@@ -29,6 +29,9 @@ export interface Dictionary {
       inputEmailPlaceholder?: string;
       inputSubmitButtonText?: string;
       inputSubscribeToNewsLetter?: string;
+      successMessage: string;
+      successFailureMessage: string;
+      
     };
     MegaMenu?: {
       announcement: string;
