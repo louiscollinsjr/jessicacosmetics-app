@@ -24,6 +24,15 @@ export interface Dictionary {
     };
     MegaMenu?: {
       announcement: string;
+      jessicaColorsMenu: string;
+      nailTreatmentsMenu: string;
+      zenSpaPedicureMenu: string;
+      accessoriesMenu:string;
+      jessicaColorsDesc: string;
+      nailTreatmentsDesc: string;
+      zenSpaPedicureDesc: string;
+      accessoriesDesc:string;
+    }
     }
   }
   

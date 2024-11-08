@@ -8,7 +8,15 @@
     "desc": "Jessica Cosmetics: Natural Nail Care Treatments and Colours"
   },
   "NavigationMegaMenu": {
-  "announcement":"Elevate your salon services with trusted JESSICA products. Contact us today to learn how you can bring JESSICA to your salon!"
+  "announcement":"Elevate your salon services with trusted JESSICA products. Contact us today to learn how you can bring JESSICA to your salon!",
+  "jessicaColorsDesc":"Exclusively Formulated to the highest industry standards, JESSICA polish stays on. Rich and smooth, with an extraordinary depth of colour.",
+  "nailTreatmentsDesc":"Nothing beats the beauty of natural, well-cultivated nails. Start with a healthy foundation using basic nail care. JESSICA Hand and Cuticle Care helps build strong, healthy hands and nails.",
+  "zenSpaPedicureDesc": "Start your ZenSpa journey with personalized foot treatments that refresh your mind, body, and soul. Our advanced pedicure system cleanses, exfoliates, and rejuvenates your skin, leaving it softer and healthier.",
+  "accessoriesDesc":"Tools and accessories for the nail professional.",
+  "jessicaColorsMenu": "JESSICA® Colours",
+  "nailTreatmentsMenu": "Nail Treatments",
+  "zenSpaPedicureMenu": "ZenSpa Pedicure",
+  "accessoriesMenu":"Accessories"
   },
   "ComingSoon": {
     "title": "Coming Soon",

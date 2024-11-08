@@ -12,8 +12,16 @@
     "its way.":"pe drum."
  },
  "NavigationMegaMenu": {
-  "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!"
-  },
+  "announcement":"Elevați serviciile salonului dumneavoastră cu produsele de încredere JESSICA. Contactați-ne astăzi pentru a afla cum puteți aduce JESSICA în salonul dumneavoastră!",
+  "jessicaColorsDesc":"Formulat exclusiv conform celor mai înalte standarde din industrie, lacul de unghii JESSICA rezistă. Bogat și fin, cu o profunzime extraordinară a culorii.",
+  "nailTreatmentsDesc":"Nimic nu întrece frumusețea unghiilor naturale, bine îngrijite. Începe cu o bază sănătoasă folosind produse de bază pentru îngrijirea unghiilor. Îngrijirea mâinilor și cuticulelor JESSICA ajută la formarea unor mâini și unghii puternice și sănătoase.",
+  "zenSpaPedicureDesc": "Începe-ți călătoria ZenSpa cu tratamente personalizate pentru picioare care îți revigorează mintea, corpul și sufletul. Sistemul nostru avansat de pedichiură curăță, exfoliază și revitalizează pielea, lăsând-o mai fină și mai sănătoasă.",
+  "accessoriesDesc":"Instrumente și accesorii pentru profesionistul în manichiură.",
+  "jessicaColorsMenu": "Culorile JESSICA®",
+  "nailTreatmentsMenu": "Tratamente pentru unghii",
+  "zenSpaPedicureMenu": "Pedichiură ZenSpa",
+  "accessoriesMenu":"Accesorii"
+},
   "ComingSoon": {
     "title": "Coming Soon",
     "desc": "Coming Soon",

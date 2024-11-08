@@ -30,84 +30,7 @@ type ColorScheme = {
 }
 
 
-// Updated menu data structure with descriptions
-const menuData = [
-  {
-    eyebrow: 'Colours',
-    title: 'JESSICA® Colours',
-    description: 'Exclusively Formulated to the highest industry standards, JESSICA polish stays on. Rich and smooth, with an extraordinary depth of colour.',
-    items: [
-        { name: 'Colours', href: '/electronics', 
-          subitems: [
-            { name: 'Custom Nail Colours', href: '/electronics' },
-            { name: 'Phenon Vivid Colours', href: '/clothing' },
-            { name: 'Gelertion Colours', href: '/books' },
-          ]
-  }, { name: 'BioPure', href: '/electronics', 
-    subitems: [
-        { name: 'BioPure Colours', href: '/clothing' },
-                { name: 'BioPure Removers', href: '/clothing' },
-                { name: 'BioPure Topcoats', href: '/clothing' },
-                { name: 'BioPure Basecoats', href: '/clothing' },
-    ]
-},], },
-  {
-    eyebrow: 'Care',
-    title: 'Nail Treatments',
-    description: 'Nothing beats the beauty of natural, well-cultivated nails. Start with a healthy foundation using basic nail care. JESSICA Hand and Cuticle Care helps build strong, healthy hands and nails.',
-    items: [
-      { name: 'Hand & Cuticle Care', href: '/electronics', 
-        subitems: [
-            { name: 'Hydration and Exfoliants', href: '/clothing' },
-            { name: 'Polish Removal & Cleaning', href: '/electronics' },
-            { name: 'JESSICA® bodytreats', href: '/clothing' },
-        ]
-      },
-      { name: 'Top & Base Coats', href: '/electronics', 
-        subitems: [
-            { name: 'Topcoats', href: '/clothing' },
-            { name: 'Basecoats', href: '/clothing' },
-            { name: 'Nail Kits', href: '/electronics' },
-        ]
-      },
-    ],
-  },
-  {
-    title: 'ZenSpa Pedicure',
-    description: 'Start your ZenSpa journey with personalized foot treatments that refresh your mind, body, and soul. Our advanced pedicure system cleanses, exfoliates, and rejuvenates your skin, leaving it softer and healthier.',
-    items: [
-        { name: 'ZenSpa Pedicure', href: '/electronics', 
-            subitems: [
-                { name: 'ZenSpa Pedicure Treatments', href: '/clothing' },
-                { name: 'ZenSpa Starter Kit', href: '/clothing' },
-            ]
-          },
-    ],
-  },
-  {
-    title: 'Accessories',
-    description: 'Tools and accessories for the nail professional.',
-    items: [
-        { name: 'Accessories', href: '/electronics', 
-            subitems: [
-                { name: 'Files', href: '/clothing' },
-                { name: 'Brushes', href: '/clothing' },
-                { name: 'Beyond Clean Sanitaizing Spray', href: '/clothing' },
-            ]
-          },
-    ],
-  },
-//   {
-//     title: 'BioPure',
-//     description: ' 24 Beautiful New Colors, Base Coat, Top Coat, Remover derived from all-natural, bio-sourced ingredients.',
-//     items: [
-//         { name: 'BioPure Colours', href: '/clothing' },
-//                 { name: 'BioPure Removers', href: '/clothing' },
-//                 { name: 'BioPure Topcoats', href: '/clothing' },
-//                 { name: 'BioPure Basecoats', href: '/clothing' },
-//     ],
-//   },
-]
+
 
 export default function MegaMenu({ colorScheme = {
   primary: 'bg-black',
@@ -122,7 +45,84 @@ export default function MegaMenu({ colorScheme = {
   const [scrollPosition, setScrollPosition] = useState(0)
   
   
-
+// Updated menu data structure with descriptions
+const menuData = [
+  {
+    eyebrow: 'Colours',
+    title: dictionary.NavigationMegaMenu.jessicaColorsMenu,
+    description: dictionary.NavigationMegaMenu.jessicaColorsDesc,
+    items: [
+        { name: 'Colours', href: '#', 
+          subitems: [
+            { name: 'Custom Nail Colours', href: '#' },
+            { name: 'Phenon Vivid Colours', href: '#' },
+            { name: 'Gelertion Colours', href: '#' },
+          ]
+  }, { name: 'BioPure', href: '#', 
+    subitems: [
+        { name: 'BioPure Colours', href: '#' },
+                { name: 'BioPure Removers', href: '#' },
+                { name: 'BioPure Topcoats', href: '#' },
+                { name: 'BioPure Basecoats', href: '#' },
+    ]
+},], },
+  {
+    eyebrow: 'Care',
+    title: dictionary.NavigationMegaMenu.nailTreatmentsMenu,
+    description: dictionary.NavigationMegaMenu.nailTreatmentsDesc,
+    items: [
+      { name: 'Hand & Cuticle Care', href: '#', 
+        subitems: [
+            { name: 'Hydration and Exfoliants', href: '#' },
+            { name: 'Polish Removal & Cleaning', href: '#' },
+            { name: 'JESSICA® bodytreats', href: '#' },
+        ]
+      },
+      { name: 'Top & Base Coats', href: '#', 
+        subitems: [
+            { name: 'Topcoats', href: '#' },
+            { name: 'Basecoats', href: '#' },
+            { name: 'Nail Kits', href: '#' },
+        ]
+      },
+    ],
+  },
+  {
+    title: dictionary.NavigationMegaMenu.zenSpaPedicureMenu,
+    description: dictionary.NavigationMegaMenu.zenSpaPedicureDesc,
+    items: [
+        { name: 'ZenSpa Pedicure', href: '#', 
+            subitems: [
+                { name: 'ZenSpa Pedicure Treatments', href: '#' },
+                { name: 'ZenSpa Starter Kit', href: '#' },
+            ]
+          },
+    ],
+  },
+  {
+    title: dictionary.NavigationMegaMenu.accessoriesMenu,
+    description: dictionary.NavigationMegaMenu.accessoriesDesc,
+    items: [
+        { name: 'Accessories', href: '#', 
+            subitems: [
+                { name: 'Files', href: '#' },
+                { name: 'Brushes', href: '#' },
+                { name: 'Beyond Clean Sanitaizing Spray', href: '#' },
+            ]
+          },
+    ],
+  },
+//   {
+//     title: 'BioPure',
+//     description: ' 24 Beautiful New Colors, Base Coat, Top Coat, Remover derived from all-natural, bio-sourced ingredients.',
+//     items: [
+//         { name: 'BioPure Colours', href: '#' },
+//                 { name: 'BioPure Removers', href: '#' },
+//                 { name: 'BioPure Topcoats', href: '#' },
+//                 { name: 'BioPure Basecoats', href: '#' },
+//     ],
+//   },
+]
 
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
