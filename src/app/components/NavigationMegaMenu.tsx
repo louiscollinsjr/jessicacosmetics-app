@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X, ShoppingCart, Search, User } from 'lucide-react'
 import { Roboto } from 'next/font/google'
@@ -43,7 +43,14 @@ export default function MegaMenu({ colorScheme = {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [showAnnouncement, setShowAnnouncement] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [announcementHeight, setAnnouncementHeight] = useState(0)
+  const announcementRef = useRef<HTMLDivElement>(null)
   
+  useEffect(() => {
+    if (announcementRef.current) {
+      setAnnouncementHeight(announcementRef.current.offsetHeight)
+    }
+  }, [showAnnouncement])
   
 // Updated menu data structure with descriptions
 const menuData = [
@@ -150,16 +157,17 @@ const menuData = [
     subMenu: `${colorScheme.primary} ${colorScheme.accent}`,
     mobileMenu: `${colorScheme.primary} ${colorScheme.text}`,
   }
-  const announcementHeight = 40 // Adjust based on your actual announcement height
+  //const announcementHeight = 40 // Adjust based on your actual announcement height
   //const showAnnouncement = scrollPosition < announcementHeight
  
   return (
     <>
     {showAnnouncement && (
-      <div 
-        className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-30"
-        style={{ transform: `translateY(-${scrollPosition}px)` }}
-      >
+     <div 
+     ref={announcementRef}
+     className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-30"
+     style={{ transform: `translateY(-${Math.min(scrollPosition, announcementHeight)}px)` }}
+   >
         <div className="container mx-auto px-4 flex justify-center items-center text-xs">
           <span>{dictionary.NavigationMegaMenu.announcement}</span>
           <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
@@ -169,13 +177,13 @@ const menuData = [
       </div>
     )}
 
-    <header 
-      className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest font-roboto`}
-      style={{ 
-        top: showAnnouncement ? `${Math.max(announcementHeight - scrollPosition, 0)}px` : '0',
-        transition: 'top 0.0s ease-out'
-      }}
-    >
+<header 
+  className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest font-roboto w-full`}
+  style={{ 
+    top: showAnnouncement ? `${announcementHeight}px` : '0',
+    transition: 'top 0.3s ease-out'
+  }}
+>
       <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" className="text-xs text-white">
         JESSICA® Cosmetics - România
@@ -266,41 +274,28 @@ const menuData = [
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className={`${styles.mobileMenu} md:hidden ${showAnnouncement ? 'mt-10' : ''}`}>
-          {menuData.map((section) => (
-            <div key={section.title} className="border-b border-black">
-              <button
-                className="w-full px-4 py-2 flex justify-between items-center text-xl font-normal"
-                // onClick={() => toggleSubMenu(activeMenu === section.title ? null : section.title)}
-              >
-                {section.title}
-                {/* <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeMenu === section.title ? 'rotate-180' : ''}`} /> */}
-              </button>
-              {/* <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeMenu === section.title ? 'max-h-46 o4acity-100' : 'max-h-4 op4city-0'
-                }`}
-              >
-                <div className="px-4 py-2">
-                  <p className="text-sm mb-2">{section.description}</p>
-                  <ul>
-                    {section.items.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className={`${styles.menuItem} block py-2 transition duration-300`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div> */}
-            </div>
-          ))}
-        </div>
+       <div 
+       className={`${styles.mobileMenu} md:hidden fixed inset-0 bg-black min-h-screen pt-10 transition-all duration-[2400ms] ease-in-out transform ${
+         mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+       }`}
+     >
+       <button 
+         onClick={toggleMobileMenu}
+         className="absolute top-2 right-4 text-white"
+       >
+         <X className="h-6 w-6" />
+       </button>
+       {menuData.map((section) => (
+         <div key={section.title} className="">
+           <button
+             className="w-full px-4 py-2 flex justify-between items-center text-xl font-normal"
+           >
+             {section.title}
+           </button>
+         </div>
+       ))}
+     </div>
+     
       )}
       
     </header>
