@@ -33,7 +33,7 @@ export interface Dictionary {
       zenSpaPedicureDesc: string;
       accessoriesDesc:string;
     }
-    }
+    
   }
   
   export const dictionaries = {
