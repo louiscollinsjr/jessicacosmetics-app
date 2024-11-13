@@ -3,6 +3,7 @@ import '../../app/globals.css';
 import React from 'react';
 import MegaMenu from '../components/NavigationMegaMenu';
 import { getDictionary } from '@/types/dictionary';
+import Footer from '../components/Footer';
 
 type Params = Promise<{ lang: string }>;
 
@@ -20,6 +21,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
       <body className="flex flex-col min-h-screen">
         <MegaMenu dictionary={dictionary} />
         <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

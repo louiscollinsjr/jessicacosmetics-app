@@ -31,5 +31,8 @@
     "inputSubscribeToNewsLetter":"Yes, subscribe me to your newsletter",
     "successMessage":"Thank you for subscribing to our newsletter!",
     "successFailureMessage":"An error occurred while submitting your information."
+ },
+ "Footer": {
+  "copyright": "All rights reserved."
  }
 }

@@ -162,20 +162,20 @@ const menuData = [
  
   return (
     <>
-    {showAnnouncement && (
-     <div 
-     ref={announcementRef}
-     className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-30"
-     style={{ transform: `translateY(-${Math.min(scrollPosition, announcementHeight)}px)` }}
-   >
-        <div className="container mx-auto px-4 flex justify-center items-center text-xs">
-          <span>{dictionary.NavigationMegaMenu.announcement}</span>
-          <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
-            <X className="h-4 w-4 text-black" />
-          </button>
-        </div>
-      </div>
-    )}
+   {showAnnouncement && (
+  <div 
+    ref={announcementRef}
+    className="bg-gray-200 text-black py-2 text-center text-sm font-thin fixed top-0 left-0 right-0 z-30 transition-transform duration-300"
+  >
+    <div className="container mx-auto px-4 flex justify-center items-center text-xs">
+      <span>{dictionary.NavigationMegaMenu.announcement}</span>
+      <button onClick={() => setShowAnnouncement(false)} className="text-white hover:text-gray-200 p-1 bg-slate-300 rounded ml-4">
+        <X className="h-4 w-4 text-black" />
+      </button>
+    </div>
+  </div>
+)}
+
 
 <header 
   className={`${styles.header} fixed left-0 right-0 z-40 backdrop-filter backdrop-blur-lg md:bg-opacity-99 text-xs tracking-widest font-roboto w-full`}

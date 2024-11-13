@@ -43,6 +43,16 @@ export interface Dictionary {
       nailTreatmentsDesc: string;
       zenSpaPedicureDesc: string;
       accessoriesDesc:string;
+    };
+    Footer?: {
+      title?: string;
+      desc?: string;
+      copyright?: string;
+      socialMedia?: {
+        facebook?: string;
+        instagram?: string;
+        x?: string;
+      };
     }
     
   }
